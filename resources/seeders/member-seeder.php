@@ -45,7 +45,7 @@ $seeder->import(
             $item->setCategoryId((int) $faker->randomElement($categoryIds));
             $item->setIntro($faker->paragraph(5));
             $item->setDescription($faker->paragraph(10));
-            $item->setImage($faker->unsplashImage(400, 400));
+            $item->setImage($faker->avatar(400));
             $item->setState(1);
             $item->setOrdering($i);
             $item->setCreatedBy((int) $faker->randomElement($userIds));
