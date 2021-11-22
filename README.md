@@ -1,5 +1,7 @@
 # LYRASOFT Member Package
 
+![p-001-2021-11-23-03-12-35](https://user-images.githubusercontent.com/1639206/142921263-19599c30-8baa-4a69-83f4-376e3d33b6a6.jpg)
+
 ## Installation
 
 Install from composer
