@@ -1,0 +1,29 @@
+{
+    "name": "lyrasoft/member",
+    "description": "LYRASOFT member package",
+    "type": "windwalker-package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lyrasoft\\Member\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Simon Asika",
+            "email": "asika32764@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {},
+    "extra": {
+        "windwalker":{
+            "packages": [
+                "Lyrasoft\\Member\\MemberPackage"
+            ],
+            "modules": [
+                "src/Module"
+            ]
+        }
+    }
+}
