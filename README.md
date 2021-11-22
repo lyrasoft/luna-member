@@ -21,14 +21,14 @@ Edit `resources/menu/admin/sidemenu.menu.php`
 ```php
 // Category
 $menu->link(
-    '作品分類',
+    '成員分類',
     $nav->to('category_list', ['type' => 'member'])
 )
     ->icon('fal fa-sitemap');
 
 // Member
 $menu->link(
-    '作品管理',
+    '成員管理',
     $nav->to('member_list')
 )
     ->icon('fal fa-images');
