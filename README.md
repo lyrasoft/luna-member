@@ -27,16 +27,12 @@ Edit `resources/menu/admin/sidemenu.menu.php`
 
 ```php
 // Category
-$menu->link(
-    '成員分類',
-    $nav->to('category_list', ['type' => 'member'])
-)
+$menu->link('成員分類')
+    ->to($nav->to('category_list', ['type' => 'member']))
     ->icon('fal fa-sitemap');
 
-// Member
-$menu->link(
-    '成員管理',
-    $nav->to('member_list')
-)
-    ->icon('fal fa-images');
+// Portfolio
+$menu->link('成員管理')
+    ->to($nav->to('member_list'))
+    ->icon('fal fa-person');
 ```
