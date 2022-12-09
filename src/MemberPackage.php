@@ -31,7 +31,7 @@ class MemberPackage extends AbstractPackage
             [
                 static::path("src/Module/Admin/Member/**/*") => "@source/Module/Admin/Member",
             ],
-            ['Lyrasoft\\Luna\\Module\\Admin' => 'App\\Module\\Admin'],
+            ['Lyrasoft\\Member\\Module\\Admin' => 'App\\Module\\Admin'],
             ['modules', 'member_admin'],
         );
 
@@ -39,7 +39,7 @@ class MemberPackage extends AbstractPackage
             [
                 static::path("src/Module/Front/Member/**/*") => "@source/Module/Front/Member",
             ],
-            ['Lyrasoft\\Luna\\Module\\Front' => 'App\\Module\\Front'],
+            ['Lyrasoft\\Member\\Module\\Front' => 'App\\Module\\Front'],
             ['modules', 'member_front'],
         );
 
@@ -49,8 +49,8 @@ class MemberPackage extends AbstractPackage
                 static::path("src/Repository/MemberRepository.php") => '@source/Repository',
             ],
             [
-                'Lyrasoft\\Luna\\Entity' => 'App\\Entity',
-                'Lyrasoft\\Luna\\Repository' => 'App\\Repository',
+                'Lyrasoft\\Member\\Entity' => 'App\\Entity',
+                'Lyrasoft\\Member\\Repository' => 'App\\Repository',
             ],
             ['modules', 'member_model']
         );
