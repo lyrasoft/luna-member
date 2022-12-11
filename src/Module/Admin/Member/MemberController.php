@@ -43,7 +43,7 @@ class MemberController
 
                 $data['image'] = $fileUploadService->handleFileIfUploaded(
                     $app->file('item')['image'] ?? null,
-                    'images/member/' . md5((string) $data['image']) . '.{ext}'
+                    'images/member/' . md5((string) $data['id']) . '.{ext}'
                 )?->getUri(true) ?? $data['image'];
 
                 $repository->save($data);
