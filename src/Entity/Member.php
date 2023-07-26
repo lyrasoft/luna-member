@@ -34,6 +34,7 @@ use Windwalker\ORM\Metadata\EntityMetadata;
  * The Member class.
  */
 #[Table('members', 'member')]
+#[\AllowDynamicProperties]
 class Member implements EntityInterface
 {
     use EntityTrait;
