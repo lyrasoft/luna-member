@@ -34,19 +34,19 @@ use Windwalker\Core\Router\SystemUri;
             @foreach ($items as $item)
                 <div class="col-lg-3 col-md-4 col-sm-2">
                     <div class="card mb-3">
-                        <img class="card-img-top" src="{{ $item->getImage() }}" alt="Image">
+                        <img class="card-img-top" src="{{ $item->image }}" alt="Image">
 
                         <div class="card-body">
                             <div>
                                 <h4 class="card-title">
-                                    {{ $item->getName() }}
+                                    {{ $item->name }}
                                 </h4>
                                 <div>
-                                    {!! $item->getIntro() !!}
+                                    {!! $item->intro !!}
                                 </div>
                                 <div class="mt-3">
                                     <a class="btn btn-primary"
-                                        href="{{ $nav->to('member_item')->id($item->getId())->alias($item->getAlias()) }}">
+                                        href="{{ $nav->to('member_item')->id($item->id)->alias($item->alias) }}">
                                         觀看更多
                                     </a>
                                 </div>
