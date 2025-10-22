@@ -1,30 +1,20 @@
 <?php
 
-/**
- * Part of Windwalker project.
- *
- * @copyright  Copyright (C) 2021.
- * @license    __LICENSE__
- */
-
 declare(strict_types=1);
 
-namespace Lyrasoft\Member\Migration;
+namespace App\Migration;
 
-use Lyrasoft\Member\Entity\Member;
-use Windwalker\Core\Console\ConsoleApplication;
-use Windwalker\Core\Migration\Migration;
+use App\Entity\Member;
+use Windwalker\Core\Migration\AbstractMigration;
+use Windwalker\Core\Migration\MigrateUp;
+use Windwalker\Core\Migration\MigrateDown;
 use Windwalker\Database\Schema\Schema;
 
-/**
- * Migration UP: 2021112212590001_MemberInit.
- *
- * @var Migration          $mig
- * @var ConsoleApplication $app
- */
-$mig->up(
-    static function () use ($mig) {
-        $mig->createTable(
+return new /** 2025102109140001_MemberInit */ class extends AbstractMigration {
+    #[MigrateUp]
+    public function up(): void
+    {
+        $this->createTable(
             Member::class,
             function (Schema $schema) {
                 $schema->primary('id');
@@ -50,13 +40,10 @@ $mig->up(
             }
         );
     }
-);
 
-/**
- * Migration DOWN.
- */
-$mig->down(
-    static function () use ($mig) {
-        $mig->dropTables(Member::class);
+    #[MigrateDown]
+    public function down(): void
+    {
+        $this->dropTables(Member::class);
     }
-);
+};
