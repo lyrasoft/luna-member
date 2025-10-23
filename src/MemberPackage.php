@@ -28,6 +28,6 @@ class MemberPackage extends AbstractPackage
         $installer->installRoutes(static::path('routes/**/*.php'), 'routes');
 
         // Modules
-        $installer->installMVCModules(Member::class, model: false);
+        $installer->installMVCModules(Member::class);
     }
 }
