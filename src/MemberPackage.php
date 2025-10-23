@@ -28,11 +28,6 @@ class MemberPackage extends AbstractPackage
         $installer->installRoutes(static::path('routes/**/*.php'), 'routes');
 
         // Modules
-        // Admin + Front + Model
-        $installer->installMVCModules(Member::class);
-        // Admin + Front, no model
         $installer->installMVCModules(Member::class, model: false);
-        // Only Admin + Model
-        $installer->installMVCModules(Member::class, ['Admin'], true);
     }
 }
