@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Lyrasoft\Member;
 
+use Lyrasoft\Member\Entity\Member;
 use Windwalker\Core\Package\AbstractPackage;
 use Windwalker\Core\Package\PackageInstaller;
 
@@ -27,32 +28,6 @@ class MemberPackage extends AbstractPackage
         $installer->installRoutes(static::path('routes/**/*.php'), 'routes');
 
         // Modules
-        $installer->installModules(
-            [
-                static::path("src/Module/Admin/Member/**/*") => "@source/Module/Admin/Member",
-            ],
-            ['Lyrasoft\\Member\\Module\\Admin' => 'App\\Module\\Admin'],
-            ['modules', 'member_admin'],
-        );
-
-        $installer->installModules(
-            [
-                static::path("src/Module/Front/Member/**/*") => "@source/Module/Front/Member",
-            ],
-            ['Lyrasoft\\Member\\Module\\Front' => 'App\\Module\\Front'],
-            ['modules', 'member_front'],
-        );
-
-        $installer->installModules(
-            [
-                static::path("src/Entity/Member.php") => '@source/Entity',
-                static::path("src/Repository/MemberRepository.php") => '@source/Repository',
-            ],
-            [
-                'Lyrasoft\\Member\\Entity' => 'App\\Entity',
-                'Lyrasoft\\Member\\Repository' => 'App\\Repository',
-            ],
-            ['modules', 'member_model']
-        );
+        $installer->installMVCModules(Member::class);
     }
 }

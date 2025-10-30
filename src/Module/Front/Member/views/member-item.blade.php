@@ -36,17 +36,17 @@ use Windwalker\Core\Router\SystemUri;
 
                 <article class="row">
                     <div class="l-member-item__cover col-md-4 mb-4">
-                        <img class="img-fluid" src="{{ $item->getImage() }}" alt="cover">
+                        <img class="img-fluid" src="{{ $item->image }}" alt="cover">
                     </div>
 
                     <div class="col">
                         <header class="l-member-item__name">
-                            <h2>{{ $item->getName() }}</h2>
+                            <h2>{{ $item->name }}</h2>
                         </header>
 
                         <div class="article-content l-member-item__content">
-                            {!! html_escape($item->getIntro(), true) !!}
-                            {!! $item->getDescription() !!}
+                            {!! html_escape($item->intro, true) !!}
+                            {!! $item->description !!}
                         </div>
                     </div>
                 </article>
