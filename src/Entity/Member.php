@@ -14,7 +14,6 @@ use Windwalker\ORM\EntityTrait;
 use Windwalker\ORM\Metadata\EntityMetadata;
 use Lyrasoft\Luna\Attributes\Slugify;
 use Unicorn\Enum\BasicState;
-use Windwalker\ORM\Attributes\Cast;
 use Windwalker\Core\DateTime\Chronos;
 use Windwalker\ORM\Attributes\CastNullable;
 use Windwalker\Core\DateTime\ServerTimeCast;

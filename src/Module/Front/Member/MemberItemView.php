@@ -65,20 +65,20 @@ class MemberItemView implements ViewModelInterface
         /** @var Member $item */
         $item = $this->repository->getItem($id);
 
-        if (!$item || $item->getState()->equals(BasicState::UNPUBLISHED())) {
+        if (!$item || $item->state === BasicState::UNPUBLISHED) {
             throw new RouteNotFoundException('Member not found.');
         }
 
         /** @var Category $category */
-        $category = $this->categoryRepository->getItem($item->getCategoryId());
+        $category = $this->categoryRepository->getItem($item->categoryId);
 
-        if (!$category || $category->getState()->equals(BasicState::UNPUBLISHED())) {
+        if (!$category || $category->state === BasicState::UNPUBLISHED) {
             throw new RouteNotFoundException('Category not published.');
         }
 
         // Keep URL unique
-        if ($item->getAlias() !== $alias) {
-            return $this->nav->self()->alias($item->getAlias());
+        if ($item->alias !== $alias) {
+            return $this->nav->self()->alias($item->alias);
         }
 
         $this->prepareMetadata($view->getHtmlFrame(), $item);
@@ -91,10 +91,10 @@ class MemberItemView implements ViewModelInterface
 
     protected function prepareMetadata(HtmlFrame $htmlFrame, Member $item): void
     {
-        $fullText = $item->getIntro() . ' ' . $item->getDescription();
+        $fullText = $item->intro . ' ' . $item->description;
 
-        $htmlFrame->setTitle($item->getName());
-        $htmlFrame->setCoverImagesIfNotEmpty($item->getImage());
+        $htmlFrame->setTitle($item->name);
+        $htmlFrame->setCoverImagesIfNotEmpty($item->image);
         $htmlFrame->setDescriptionIfNotEmpty(
             (string) str($fullText)->stripHtmlTags()->truncate(150, '...')
         );
