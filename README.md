@@ -13,22 +13,26 @@ composer require lyrasoft/member
 Then copy files to project
 
 ```shell
-php windwalker pkg:install lyrasoft/member -t routes -t lang -t migrations -t seeders
+php windwalker pkg:install lyrasoft/member -t routes -t migrations -t seeders
 ```
 
 Seeders
 
-- Add `member-seeder.php` to `resources/seeders/main.php`
-- Add `member` type to `category-seeder.php`
+- Add `member.seeder.php` to `resources/seeders/main.seeder.php`
+- Add `member` type to `category.seeder.php`
 
-Languages
+### Languages
 
-If you don't want to copy language files, remove `-t lang` from install command.
-
-Then add this line to admin & front middleware:
+Add this line to admin & front middleware:
 
 ```php
-$this->lang->loadAllFromVendor('lyrasoft/member', 'ini');
+$this->lang->loadAllFromVendor(\Lyrasoft\Member\MemberPackage::class, 'ini');
+```
+
+If you want to copy language files, use this command:
+
+```shell
+php windwalker pkg:install lyrasoft/member -t lang
 ```
 
 ## Register Admin Menu
