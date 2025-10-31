@@ -61,8 +61,8 @@ class MemberListView implements ViewModelInterface
         $items = $this->repository->getListSelector()
             ->addFilter('member.state', 1)
             ->addFilter('category.state', 1)
-            ->where('category.lft', '>=', $category->getLft())
-            ->where('category.rgt', '<=', $category->getRgt())
+            ->where('category.lft', '>=', $category->lft)
+            ->where('category.rgt', '<=', $category->rgt)
             ->ordering('member.created', 'DESC')
             ->page($page)
             ->limit($limit);
