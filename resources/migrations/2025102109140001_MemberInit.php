@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Migration;
 
-use App\Entity\Member;
+use Lyrasoft\Member\Entity\Member;
 use Windwalker\Core\Migration\AbstractMigration;
 use Windwalker\Core\Migration\MigrateUp;
 use Windwalker\Core\Migration\MigrateDown;
