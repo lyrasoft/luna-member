@@ -19,7 +19,8 @@ php windwalker pkg:install lyrasoft/member -t routes -t migrations -t seeders
 Seeders
 
 - Add `member.seeder.php` to `resources/seeders/main.seeder.php`
-- Add `member` type to `category.seeder.php`
+- Package will auto add categories to seeders
+- If you want to modify categories, edit `seeders/categories/member.categories.php`
 
 ### Languages
 
